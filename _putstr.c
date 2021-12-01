@@ -5,6 +5,7 @@
  * @s: a pointer to a string
  * Return: the number of bytes of the string
  */
+
 int _putstr(char *s)
 {
 	int i;
