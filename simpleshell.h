@@ -14,10 +14,13 @@ int _putchar(char c);
 int _putstr(char *s);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
+char *_strdup(char *str);
 
-/* Parse and execute */
+/* Parse and execute and get env and path*/
 char **split(char *line, char *delim);
 void exe(char **av);
+void get_path(char **av);
+char *_getenv(const char *name);
 
 /* Manage memory */
 char *_memcpy(char *dest, char *src, unsigned int n);
