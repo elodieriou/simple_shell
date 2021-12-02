@@ -10,7 +10,7 @@ int _putstr(char *s)
 {
 	int i;
 
-	if (str == NULL)
+	if (s == NULL)
 		return (-1);
 	for (i = 0; s[i]; i++)
 		_putchar(s[i]);
