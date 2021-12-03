@@ -14,7 +14,10 @@ int exe_builtins(char **av)
 	int i;
 
 	for (i = 0; list[i].name != NULL; i++)
-		if (_strcmp(av[0], *list[i].name) == 0)
-			return (list[i].f(av));
+		if (_strcmp(av[0], list[i].name) == 0)
+		{
+			list[i].f();
+			return (0);
+		}
 	return (-1);
 }

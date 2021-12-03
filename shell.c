@@ -21,9 +21,10 @@ int main(void)
 			free(line);
 			exit(EXIT_FAILURE);
 		}
-		if (line[0] == '\n')
+		if (line[0] == '\n' || line[0] == '/' || line[0] == '.')
 			continue;
 		av = split(line, "' '':''\n''\t'");
+		get_path(av);
 		if (stat(av[0], &st) == 0)
 			exe(av);
 		else
