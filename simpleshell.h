@@ -10,6 +10,8 @@
 #include <string.h>
 #include <signal.h>
 
+extern char **environ;
+
 /* Manage strings of characters */
 int _putchar(char c);
 int _putstr(char *s);
@@ -20,7 +22,7 @@ char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 
 /* Parse and execute and get env and path*/
-char ** split(char *line, char *delim);
+char **split(char *line, char *delim);
 int exe(char **av);
 void get_path(char **av);
 char *_getenv(const char *name);
