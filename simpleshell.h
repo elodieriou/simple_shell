@@ -10,6 +10,17 @@
 #include <string.h>
 #include <signal.h>
 
+/**
+ * struct builtin_shell - Struct that use a builtin
+ * @name: the name of the command
+ * @f: the fonction associated to the command
+ */
+typedef struct builtin_shell
+{
+	char *name;
+	int (*f)(void);
+} builtin_t;
+
 extern char **environ;
 
 /* Manage strings of characters */
@@ -21,7 +32,7 @@ char *_strdup(char *str);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 
-/* Parse and execute and get env and path*/
+/* Parse, execute, get environment and get path*/
 char **split(char *line, char *delim);
 int exe(char **av);
 void get_path(char **av);
@@ -32,5 +43,10 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *_memset(char *s, char b, unsigned int n);
 void *_calloc(unsigned int nmemb, unsigned int size);
+
+/* Builtins */
+int exe_builtins(char **av);
+int builtin_exit(void);
+int builtin_env(void);
 
 #endif /*DEF_SIMPLESHELL*/
