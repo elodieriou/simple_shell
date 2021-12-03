@@ -12,21 +12,18 @@ char **split(char *line, char *delim)
 	char *token, **av;
 	int i = 0;
 
-/* Extract token from a string line */
+	av = malloc(sizeof(char *));
+	if (av == NULL)
+		exit(EXIT_FAILURE);
 	token = strtok(line, delim);
 	for (i = 0; token != NULL; i++)
 	{
-	/* Realloc memory for each token */
-	/* Add token to an array */
-	/* Change token */
-		av = _realloc(av, sizeof(av) * (i + 1),
-			      (sizeof(av) * (i + 1)) + sizeof(char *));
 		av[i] = token;
 		token = strtok(NULL, delim);
+		av = _realloc(av, sizeof(av) * (i + 1),
+			      (sizeof(av) * (i + 1)) + sizeof(char *));
 	}
-/* Realloc memory for a token that take NULL value at the end of array */
-	av = _realloc(av, sizeof(av) * (i + 1),
-		      (sizeof(av) * (i + 1)) + sizeof(char *));
-	av[i] = NULL;
+
+	av[i] = token;
 	return (av);
 }

@@ -10,6 +10,7 @@ int main(void)
 	char *line = NULL, **av;
 	size_t buf = 0;
 	int n;
+	struct stat st;
 
 	while (1)
 	{
@@ -20,12 +21,14 @@ int main(void)
 			free(line);
 			exit(EXIT_FAILURE);
 		}
-		av = split(line, " \n\t");
-		if (line == NULL)
-			perror(av[0]);
-		else
+		if (line[0] == '\n')
+			continue;
+		av = split(line, "' '':''\n''\t'");
+		if (stat(av[0], &st) == 0)
 			exe(av);
+		else
+			perror("./hsh");
 		free(av);
 	}
-	free(line);
+	exit(EXIT_SUCCESS);
 }
