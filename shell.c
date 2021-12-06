@@ -10,7 +10,6 @@ int main(void)
 	char *line = NULL, **av;
 	size_t buf = 0;
 	int n;
-	struct stat st;
 
 	while (1)
 	{
@@ -24,11 +23,16 @@ int main(void)
 		if (line[0] == '\n' || line[0] == '/' || line[0] == '.')
 			continue;
 		av = split(line, "' '':''\n''\t'");
-		get_path(av);
-		if (stat(av[0], &st) == 0)
-			exe(av);
+		if (check_builtin(av) == -1)
+		{
+			get_path(av);
+			if (av[0] != NULL)
+				exe(av);
+			else
+				perror("exe()");
+		}
 		else
-			perror("./hsh");
+			exe_builtins(av);
 		free(av);
 	}
 	exit(EXIT_SUCCESS);
