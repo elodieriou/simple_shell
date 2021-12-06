@@ -1,7 +1,7 @@
 #include "simpleshell.h"
 
 /**
- * get_path - get the absolute path of
+ * get_path - get the absolute path
  * @av: array of strings (arguments of getline)
  * Return: a string
  */
@@ -21,7 +21,11 @@ void get_path(char **av)
 		bin = _realloc(bin, sizeof(bin),
 		       ((_strlen(token) + _strlen(av[0]) + 2) * sizeof(char)));
 		if (bin == NULL)
-			perror("realloc");
+                {
+                        free(bin);
+                        exit(EXIT_FAILURE);
+                }
+
 		bin = _strcat(bin, token);
 		bin = _strcat(bin, "/");
 		bin = _strcat(bin, av[0]);

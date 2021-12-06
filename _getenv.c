@@ -14,11 +14,11 @@ char *_getenv(const char *name)
 	tmp = malloc(sizeof(char *));
 	for (i = 0; environ[i] != NULL; i++)
 	{
-		tmp[i] = _realloc(tmp, sizeof(tmp),
-				  ((_strlen(environ[i]) + 2) * sizeof(char)));
+		tmp = _realloc(tmp, sizeof(tmp),
+			       ((i + 1) * sizeof(char *)));
 		tmp[i] = _strdup(environ[i]);
-		_strdup(environ[i]);
 	}
+
 	for (i = 0; tmp[i] != NULL; i++)
 	{
 		token = strtok(tmp[i], "=");

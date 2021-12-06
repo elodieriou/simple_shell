@@ -8,7 +8,7 @@
 int builtin_help(char **av)
 {
 	if (av[1] == NULL)
-		_putstr("help: expected argument after\n");
+		_putstr("help: not found\n");
 
 	else if (_strcmp(av[1], "exit") == 0)
 		_putstr("exit: Terminate the simple shell program\n");

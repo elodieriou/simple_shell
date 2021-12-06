@@ -1,0 +1,4 @@
+#include "simpleshell.h"
+
+/**
+ * free_array - 

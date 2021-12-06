@@ -12,7 +12,7 @@ int main(void)
 	int n;
 
 	signal(SIGINT, get_signal);
-	
+
 	while (1)
 	{
 		_putstr("#cisfun$ ");
@@ -32,7 +32,7 @@ int main(void)
 			if (av[0] != NULL)
 				exe(av);
 			else
-				perror("exe()");
+				perror("main");
 		}
 		else
 			exe_builtins(av);
