@@ -8,21 +8,19 @@ Our team, my friend and me (Ivan and Elodie, respectively):
 
 ![Team project Simple Shell](./pictures/happy_simple_shell.png)
 
-## Task (mandatory)
+## Tasks (mandatory)
 
-###0. README, man, AUTHORS
+### 0. README, man, AUTHORS
 
 * Write a README
 * Write a man for your shell.
 * You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. Format, see Docker
 
-
-###1. Betty would be proud
+### 1. Betty would be proud
 
 Write a beautiful code that passes the Betty checks
 
-
-###2. Simple shell 0.1
+### 2. Simple shell 0.1
 
 Write a UNIX command line interpreter.
 
@@ -67,14 +65,13 @@ env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     stat 
 #cisfun$ julien@ubuntu:~/shell$
 ```
 
-###3. Simple shell 0.2
+### 3. Simple shell 0.2
 
 Simple shell 0.1 +
 
 * Handle command lines with arguments
 
-
-###4. Simple shell 0.3
+### 4. Simple shell 0.3
 
 Simple shell 0.2 +
 
@@ -99,8 +96,7 @@ drwx------ 3 root   root   4096 Dec  5 12:07 systemd-private-062a0eca7f2a4434973
 julien@ubuntu:~/shell$
 ```
 
-
-###5. Simple shell 0.4
+### 5. Simple shell 0.4
 
 Simple shell 0.3 +
 
@@ -108,8 +104,7 @@ Simple shell 0.3 +
 * Usage: exit
 * You don’t have to handle any argument to the built-in exit
 
-
-###6. Simple shell 1.0
+### 6. Simple shell 1.0
 
 Simple shell 0.4 +
 
@@ -133,60 +128,58 @@ $ exit
 julien@ubuntu:~/shell$
 ```
 
-
-###7. What happens when you type `ls -l *.c` in the shell
+### 7. What happens when you type `ls -l *.c` in the shell
 
 Write a blog post describing step by step what happens when you type ls -l *.c and hit Enter in a shell. Try to explain every step you know of, going in as much details as you can, give examples and draw diagrams when needed. You should merge your previous knowledge of the shell with the specifics of how it works under the hoods (including syscalls).
 
-# Program Simple Shell
+# Program HSH
 
 ## Description
-Simple Shell is a program that takes the command inputs written from the user in the kernel. This program passes them to the machine and execute them.
 
-## Prototype
-__simple_shell__ [command_file]
+HSH is a Simple Shell. It's program that takes commands inputs written from the user in the kernel. This program passes them to the machine and execute them.
+
 
 ## Functions
 
 ### Manage strings of character
 
-[_putchar.c](./simple_shell/_putchar.c)
+[_putchar.c](../simple_shell/_putchar.c)
 ```
 /* _putchar - function that write a character to stdout */
 int _putchar(char c);
 ```
 
-[_putstr.c](./simple_shell/_putstr.c)
+[_putstr.c](../simple_shell/_putstr.c)
 ```
 /* _putstr - function that print a string
 int _putstr(char *s);
 ```
 
-[_strcmp.c](./simple_shell/_strcmp.c)
+[_strcmp.c](../simple_shell/_strcmp.c)
 ```
 /* _strcmp - function that compares two strings */
 int _strcmp(char *s1, char *s2);
 ```
 
-[_strlen.c](./simple_shell/_strlen.c)
+[_strlen.c](../simple_shell/_strlen.c)
 ```
 /* _strlen - function that calculate the lenght of a string */
 int _strlen(char *s);
 ```
 
-[_strdup.c](./simple_shell/_strdup.c)
+[_strdup.c](../simple_shell/_strdup.c)
 ```
 /* _strdup - function that duplicate a string */
 char *_strdup(char *str);
 ```
 
-[_strcat.c](./simple_shell/_strcat.c)
+[_strcat.c](../simple_shell/_strcat.c)
 ```
 /* _strcat - function that concatenate two strings */
 char *_strcat(char *dest, char *src);
 ```
 
-[_strcpy.c](./simple_shell/_strcpy.c)
+[_strcpy.c](../simple_shell/_strcpy.c)
 ```
 /* _strcpy - function that copy a string */
 char *_strcpy(char *dest, char *src);
@@ -194,25 +187,25 @@ char *_strcpy(char *dest, char *src);
 
 ### Manage memory
 
-[_memcpy.c](./simple_shell/_memcpy.c)
+[_memcpy.c](../simple_shell/_memcpy.c)
 ```
 /* _memcpy - function that copy memory area */
 char *_memcpy(char *dest, char *src, unsigned int n);
 ```
 
-[_realloc.c](./simple_shell/_realloc.c)
+[_realloc.c](../simple_shell/_realloc.c)
 ```
 /* _realloc - function that changes the size of the memory */
 void *_realloc(void *ptr, unisgned in old_size, unsigned int new_size);
 ```
 
-[_memset.c](./simple_shell/_memset.c)
+[_memset.c](../simple_shell/_memset.c)
 ```
 /* _memset - function that fill memory with a constant byte */
 char *_memset(char *s, char b, unsigned int n);
 ```
 
-[_calloc.c](./simple_shell/_calloc.c)
+[_calloc.c](../simple_shell/_calloc.c)
 ```
 /* _calloc - function that allocates memory for an array of n elements */
 void *_calloc(unsigned int nmemb, unsigned int size);
@@ -220,13 +213,13 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 
 ### Get environment and PATH
 
-[_getenv.c](./simple_shell/_getenv.c)
+[_getenv.c](../simple_shell/_getenv.c)
 ```
 /* _getenv - function that get an environement variable */
 char *_getenv(const char *name);
 ```
 
-[get_path.c](./simple_shell/get_path.c)
+[get_path.c](../simple_shell/get_path.c)
 ```
 /* get_path - function that get the path to the command file
 void get_path(char **av);
@@ -234,13 +227,13 @@ void get_path(char **av);
 
 ### Split and execute
 
-[split.c](./simple_shell/split.c)
+[split.c](../simple_shell/split.c)
 ```
 /* split - function that parse a string */
 char **split(char *line, char *delim);
 ```
 
-[exe.c](./simple_shell/exe.c)
+[exe.c](../simple_shell/exe.c)
 ```
 /* exe - function that execute a command */
 int exe(char **av);
@@ -248,19 +241,19 @@ int exe(char **av);
 
 ### Builtins
 
-[builtin_exit.c](./simple_shell/builtin_exit.c)
+[builtin_exit.c](../simple_shell/builtin_exit.c)
 ```
 /* builtin_exit - function that exit the program simple_shell */
 int builtin_exit(void);
 ```
 
-[builtin_env.c](./simple_shell/builtin_env.c)
+[builtin_env.c](../simple_shell/builtin_env.c)
 ```
 /* builtin_env - function that print an environment variable */
 int builtin_env(void);
 ```
 
-[exe_buildins.c](./simple_shell/exe_builtins.c)
+[exe_buildins.c](../simple_shell/exe_builtins.c)
 ```
 /* exe_builtins - function that execute the builtins */
 int exe_builtins(char **av);
@@ -285,14 +278,29 @@ extern char **environ;
 
 ## How it work
 
-At first, it necessary to compile with the following command:
+1. It necessary to compile with the following command:
 ```
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
+2. Execute `./hsh` to run and display the prompt `#cisfun$`
 
-Then, execute `./hsh` to display the prompt `#cisfun$`
+3. Pass a command file like `ls`, `ls -la` or `pwd`
 
-Finaly, pass a command file.
+4. Use the command `exit` or `ctrl + D` to exit simple_shell
+
+
+
+## Valgrind commands
+
+Valgrind Memcheck is a tool that detects memory leaks and memory errors:
+* Command for memory leak checks:
+```
+valgrind --leak-check=full --show-leak-kinds=all ./hsh
+```
+* Command for error checks:
+```
+valgrind --track-origins=yes ./hsh
+```
 
 
 ## Man page
