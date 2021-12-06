@@ -18,12 +18,11 @@ char **split(char *line, char *delim)
 	token = strtok(line, delim);
 	for (i = 0; token != NULL; i++)
 	{
+		av[i] = _realloc(av[i], 0,
+			       (_strlen(token) + 1) * sizeof(char));
 		av[i] = token;
 		token = strtok(NULL, delim);
-		av = _realloc(av, sizeof(av) * (i + 1),
-			      (sizeof(av) * (i + 1)) + sizeof(char *));
 	}
-
 	av[i] = token;
 	return (av);
 }

@@ -2,6 +2,7 @@
 
 /**
  * builtin_env - function that prints the current environment
+ * @av: array of strings
  * Return: 0 always success
  */
 int builtin_env(char **av)

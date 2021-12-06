@@ -29,6 +29,5 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (nptr == 0)
 		return (NULL);
 	_memcpy(nptr, ptr, old_size);
-	free(ptr);
 	return (nptr);
 }
