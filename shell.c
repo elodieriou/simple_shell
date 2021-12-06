@@ -17,14 +17,14 @@ int main(void)
 	{
 		_putstr("#cisfun$ ");
 		n = getline(&line, &buf, stdin);
+		if (line[0] == '\n' || line[0] == '/' || line[0] == '.')
+			continue;
 		if (n == -1)
 		{
 			_putchar('\n');
 			free(line);
 			exit(EXIT_FAILURE);
 		}
-		if (line[0] == '\n' || line[0] == '/' || line[0] == '.')
-			continue;
 		av = split(line, "' '':''\n''\t'");
 		if (check_builtin(av) == -1)
 		{
@@ -39,4 +39,5 @@ int main(void)
 		free(av);
 	}
 	exit(EXIT_SUCCESS);
+
 }

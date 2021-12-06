@@ -23,7 +23,7 @@ void get_path(char **av)
 		if (bin == NULL)
                 {
                         free(bin);
-                        exit(EXIT_FAILURE);
+                        return;
                 }
 
 		bin = _strcat(bin, token);
