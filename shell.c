@@ -19,6 +19,7 @@ int main(void)
 		n = getline(&line, &buf, stdin);
 		if (n == -1)
 		{
+			_putchar('\n');
 			free(line);
 			exit(EXIT_FAILURE);
 		}
