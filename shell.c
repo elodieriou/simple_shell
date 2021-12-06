@@ -11,6 +11,8 @@ int main(void)
 	size_t buf = 0;
 	int n;
 
+	signal(SIGINT, get_signal);
+	
 	while (1)
 	{
 		_putstr("#cisfun$ ");
