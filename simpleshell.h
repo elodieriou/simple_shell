@@ -18,7 +18,7 @@
 typedef struct builtin_shell
 {
 	char *name;
-	int (*f)(void);
+	int (*f)(char **);
 } builtin_t;
 
 extern char **environ;
@@ -46,7 +46,9 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 
 /* Builtins */
 int exe_builtins(char **av);
-int builtin_exit(void);
-int builtin_env(void);
+int check_builtin(char **av);
+int builtin_exit(char **av);
+int builtin_env(char **av);
+int builtin_help(char **av);
 
 #endif /*DEF_SIMPLESHELL*/

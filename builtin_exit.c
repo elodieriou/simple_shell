@@ -4,7 +4,9 @@
  * builtin_exit - function that exit the shell
  * Return: 0 always success
  */
-int builtin_exit(void)
+int builtin_exit(char **av)
 {
-	return (0);
+	(void)av;
+
+	exit(EXIT_FAILURE);
 }

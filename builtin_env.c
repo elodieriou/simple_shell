@@ -4,9 +4,10 @@
  * builtin_env - function that prints the current environment
  * Return: 0 always success
  */
-int builtin_env(void)
+int builtin_env(char **av)
 {
 	int i;
+	(void)av;
 
 	for (i = 0; environ[i]; i++)
 	{
