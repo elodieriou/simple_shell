@@ -1,0 +1,69 @@
+.\" Manpage for simple_shell
+.\" contact 3681@holbertonschool.com to correct errors or typos
+.TH simple_shell 1 "5 December 2021" "1.0" "simple_shell man page"
+.SH NAME
+simple_shell \- command interpreter
+.SH SYNOPSIS
+\fB #include <simpleshell.h>
+
+\fB simple_shell [option_name] [argument ...]
+.SH DESCRITION
+The Simple Shell is a command that reads lines from the terminal, interpreter and executes them in a standard output.
+
+.SH INVOCATION
+If the standart input is [ls -l] to connect the command at the terminal, Simple Shell is considered an interactive shell.
+
+If the standart input is with a pipeline operator "|" to connect the command at the terminal, such as [echo "ls -l" | ./hsh], Simple Shell is considered an non-interactive mode.
+
+.SH LEXICAL STRUCTURE
+The Simple Shell reads input in terms of line from a file and breaks it up into words at whitespace (blanks and tabs).
+
+.SH EXAMPLE STANDARD INPUT
+.TS
+allbox tab(|);
+c s c
+c s c
+c s c
+c s c
+c s c.
+ls | display list directory contents
+ls -l | display ls with a long format
+pwd | print name of current working directory
+cp | copy files and directories
+mv | move or rename file/directory
+.TE
+
+.SH RETURN VALUE
+If successful return, the simple_shell return a 0.
+If an error appened (command incorrectly or doesn't exist in the $PATH), the simple_shell exit out of the child process, display an error message and return with a new prompt. At the end, a new child process began.
+
+.SH EXIT STATUS
+If the Simple Shell is not an interactive shell, the execution of the shell file will be aborted. Otherwise, the Simple Shell will exit whith the [CTRL + D] command or with the exit builtin.
+
+.SH BUILTINS
+.TS
+allbox tab(|);
+c s c
+c s c
+c s c.
+help | simple_shell display help section
+env | simple_shell prints the current environment to standard output
+exit | simple_shell exits out of the simple_shell program
+.TE
+
+.SH SEE ALSO
+
+\fBBefore coding a Simple Shell, create a Super Simple Shell !\fP
+
+.PP
+Page concept: https://intranet.hbtn.io/concepts/64
+
+Source code: https://github.com/elodieriou/super_simple_shell
+
+.SH AUTHORS
+
+Written by Ivan MICHISZ & Elodie RIOU
+
+.SH COPYRIGHT
+
+©Holberton School Laval
