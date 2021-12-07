@@ -9,13 +9,15 @@ int main(void)
 {
 	char *line = NULL, **av;
 	size_t buf = 0;
-	int n;
+	int n, mode = 1;
 
 	signal(SIGINT, get_signal);
 
-	while (1)
+	while (mode)
 	{
-		_putstr("#cisfun$ ");
+		mode = isatty(STDIN_FILENO);
+		if (mode == -1)
+			_putstr("#cisfun$ ");
 		n = getline(&line, &buf, stdin);
 		if (n == -1)
 		{
@@ -23,7 +25,7 @@ int main(void)
 			free(line);
 			exit(EXIT_FAILURE);
 		}
-		av = split(line, "' ''.'':''\n''\t'");
+		av = split(line, "' '':''\n''\t'");
 		if (av[0] == NULL)
 		{
 			free(av);
@@ -34,8 +36,6 @@ int main(void)
 			get_path(av);
 			if (av[0] != NULL)
 				exe(av);
-			else
-				perror("main");
 		}
 		else
 			exe_builtins(av);
