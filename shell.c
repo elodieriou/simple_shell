@@ -17,15 +17,18 @@ int main(void)
 	{
 		_putstr("#cisfun$ ");
 		n = getline(&line, &buf, stdin);
-		if (line[0] == '\n' || line[0] == '/' || line[0] == '.')
-			continue;
 		if (n == -1)
 		{
 			_putchar('\n');
 			free(line);
 			exit(EXIT_FAILURE);
 		}
-		av = split(line, "' '':''\n''\t'");
+		av = split(line, "' ''.'':''\n''\t'");
+		if (av[0] == NULL)
+		{
+			free(av);
+			continue;
+		}
 		if (check_builtin(av) == -1)
 		{
 			get_path(av);
