@@ -54,6 +54,5 @@ int builtin_help(char **av);
 
 /* Error management */
 void get_signal(int num);
-void print_error(int num, char **av);
 
 #endif /*DEF_SIMPLESHELL*/
