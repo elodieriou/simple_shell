@@ -249,7 +249,7 @@ int builtin_env(void);
 
 [builtin_help.c](https://github.com/elodieriou/simple_shell/blob/main/builtin_help.c)
 ```
-/* builtin_help - function that help the user */
+/* builtin_help.c - function that help the user */
 int builtin_help(char **av);
 ```
 
@@ -268,6 +268,10 @@ int exe_builtins(char **av);
 ### Handle ctrl+C
 
 [get_signal.c](https://github.com/elodieriou/simple_shell/blob/main/get_signal.c)
+```
+/* get_signal - function that not quit simple_shell when the user inputs ^C */
+void get_signal(int num);
+```
 
 ### Structure
 
@@ -322,7 +326,6 @@ We alwready used the text-formatting language `Groff`:
 In order to format a man page and view it on the terminal, use the command: `man ./man_1_simple_shell`.
 
 To know more about groff, go to the `man groff`.
-
 
 ## Authors
 
