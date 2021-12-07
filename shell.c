@@ -16,7 +16,7 @@ int main(void)
 	while (mode)
 	{
 		mode = isatty(STDIN_FILENO);
-		if (mode == -1)
+		if (mode == 1)
 			_putstr("#cisfun$ ");
 		n = getline(&line, &buf, stdin);
 		if (n == -1)

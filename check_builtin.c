@@ -5,6 +5,7 @@
  * @av: an array of string
  * Return: 0 on success, -1 on error
  */
+
 int check_builtin(char **av)
 {
 	char *list_builtin[] = {"exit", "env", "help", NULL};

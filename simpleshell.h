@@ -27,11 +27,11 @@ extern char **environ;
 int _putchar(char c);
 int _putstr(char *s);
 int _strcmp(char *s1, const char *s2);
-int _strlen(char *s);
-char *_strdup(char *str);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 void print_number(unsigned int n);
+int _strlen(char *s);
+char *_strdup(char *str);
 
 /* Parse, execute, get environment and get path*/
 char **split(char *line, char *delim);
@@ -43,7 +43,6 @@ char *_getenv(const char *name);
 char *_memcpy(char *dest, char *src, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *_memset(char *s, char b, unsigned int n);
-void *_calloc(unsigned int nmemb, unsigned int size);
 
 /* Builtins */
 int exe_builtins(char **av);
@@ -52,7 +51,7 @@ int builtin_exit(char **av);
 int builtin_env(char **av);
 int builtin_help(char **av);
 
-/* Error management */
+/* Ctrl+c management */
 void get_signal(int num);
 
 #endif /*DEF_SIMPLESHELL*/
