@@ -13,25 +13,25 @@ The Simple_shell is a command that reads lines from the terminal, interpreter an
 .SH INVOCATION
 If no arguments are present and if the standart input of the shell is connected to a terminal, the simple_shell is considered an interactive shell. An interactive shell prompts before each command.
 
-If arguments are specified with specials characters, simple_shelle is considered an non-interactive shel.
+If arguments are specified with specials characters, simple_shell is considered an non-interactive shell.
 
 .SH LEXICAL STRUCTURE
 The Simple Shell reads input in terms of line from a file and breaks it up into words at whitespace (blanks and tabs).
 
 .SH RETURN VALUE
 If successful return, the simple_shell return a 0.
-If an error appened (command incorrectly or doesn't exist in the $PATH), the simple_shell exit out of the child process, display an error message and return with a new prompt.
+If an error appened (command incorrectly or doesn't exist in the $PATH), the simple_shell exit out of the child process, display an error message and return with a new prompt. At the end, a new child process began.
 
 .SH BUILTINS
-.PP
-help - when the command "help" is entered, simple_shell display help section.
-.PP
-env - when the command "env" is entered, simple_shell prints the current environment to standard output.
-.PP
-exit - when the commend "exit" is entered, simple_shell exits out of the simple_shell program.
-
-.SH FILES
-...........
+.TS
+allbox tab(|);
+c s c
+c s c
+c s c.
+help | simple_shell display help section
+env | simple_shell prints the current environment to standard output
+exit | simple_shell exits out of the simple_shell program
+.TE
 
 .SH SEE ALSO
 
