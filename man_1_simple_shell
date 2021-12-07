@@ -11,9 +11,9 @@ simple_shell \- command interpreter
 The Simple_shell is a command that reads lines from the terminal, interpreter and executes them in a standard output.
 
 .SH INVOCATION
-If no arguments are present and if the standart input of the shell is connected to a terminal, the simple_shell is considered an interactive shell. An interactive shell prompts before each command.
+If the command [ls -l] is passed in the Simple_shell connected to a terminal, the Simple_shell is considered an interactive shell.
 
-If arguments are specified with specials characters, simple_shell is considered an non-interactive shell.
+If the command [echo "ls -l" | ./hsh] in the real shell, the Simple_shell is considered an non-interective shell.
 
 .SH LEXICAL STRUCTURE
 The Simple Shell reads input in terms of line from a file and breaks it up into words at whitespace (blanks and tabs).
