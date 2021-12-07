@@ -21,10 +21,10 @@ void get_path(char **av)
 		bin = _realloc(bin, sizeof(bin),
 		       ((_strlen(token) + _strlen(av[0]) + 2) * sizeof(char)));
 		if (bin == NULL)
-                {
-                        free(bin);
-                        return;
-                }
+		{
+			free(bin);
+			return;
+		}
 
 		bin = _strcat(bin, token);
 		bin = _strcat(bin, "/");
