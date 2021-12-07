@@ -139,7 +139,7 @@ Write a blog post describing step by step what happens when you type ls -l *.c a
 HSH is a Simple Shell. It's program that takes commands inputs written from the user in the kernel. This program passes them to the machine and execute them.
 
 
-## Functions
+## Used functions
 
 ### Strings tools
 
@@ -302,6 +302,10 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 4. Use the command `exit` or `ctrl + D` to exit simple_shell
 
+5. Pass this command to clone the repo:
+```
+git clone https://github.com/elodieriou/simple_shell.git
+```
 
 
 ## Valgrind commands
@@ -327,8 +331,52 @@ In order to format a man page and view it on the terminal, use the command: `man
 
 To know more about groff, go to the `man groff`.
 
+
+## Challenge of this team project
+
+__First step:__ the goal was to understand the main concepts
+* PID & PPID: process ID and parent process ID. There are used by many functions and system calls to interact with and manipulate process.
+* getline: function that reads an entire line, storing the address of the buffer containing the textwrite in stdin.
+* strtok: function that breaks a string into token thinks that a delimitor.
+* execve: system call taht allows a process to execute another program.
+* fork: system call that creates a new child process.
+* wait: system call that suspends execution of the calling process until one of it's children terminates.
+* stat:system call gets the status of a file (exist or not).
+* getenv: function that get an environment variable.
+
+__Second step:__ the goal was to link all of these concepts
+* make a program that execute the command `ls -l /tmp` in 5 differents child processes
+* write a first version of a super simple shell that can run commands simple
+* clone the repo to get the code of the concepts:
+```
+git clone https://github.com/elodieriou/super_simple_shell.git
+```
+
+__Third step:__ create and link git & github
+This part was delicate. We decided to create only 2 branches : master and main. Master for the working directory and main for the checker.
+
+__Fourth step:__ it was time to coding the Simple shell
+* implementation all of the global function that we needed
+* write a function that create an array of string (tokenization)
+* write a function that find the command in the $PATH
+* write a function that execute a command
+* write a function that implemant builtins (with a linked list)
+* write a function that handle ctrl+c which not quit the program
+* write the main function that execute the simple shell
+
+__Fifth step:__ a litle bit of writing
+* write a man page for Simple Shell
+* write a complet README
+
+__Sixth step:__ check betty warnings
+We must satisfy Betty. It was a simple part. We know her now ;)
+
+__General impression__
+The most difficult to manage in this project was the memory leaks. We had to release the memory in the right place. This was the last project of the C language. Now, we're ready to learn Python!
+
+
 ## Authors
 
-Ivan MICKISZ: <a href="https://www.linkedin.com/in/ivan-mickisz-550222222/"> <img alt="Ivan MICHISZ Linkedin" width="15px" src=./pictures/logo_linkedin.png> <a href="https://github.com/IMickisz"> <img alt="Ivan MICKISZ Github" width="15px" src=./pictures/logo_github.png>
+Ivan MICKISZ:  <a href="https://www.linkedin.com/in/ivan-mickisz-550222222/"> <img alt="Ivan MICHISZ Linkedin" width="15px" src=./pictures/logo_linkedin.png> <a href="https://github.com/IMickisz"> <img alt="Ivan MICKISZ Github" width="15px" src=./pictures/logo_github.png>
 
-Elodie RIOU: <a href="https://www.linkedin.com/in/%C3%A9lodie-riou-41a43aa8/"> <img alt="Elodie RIOU Linkedin" width="15px" src=./pictures/logo_linkedin.png> <a href="https://github.com/elodieriou"> <img alt="Elodie RIOU Github" width="15px" src=./pictures/logo_github.png>
+Elodie RIOU:  <a href="https://www.linkedin.com/in/%C3%A9lodie-riou-41a43aa8/"> <img alt="Elodie RIOU Linkedin" width="15px" src=./pictures/logo_linkedin.png> <a href="https://github.com/elodieriou"> <img alt="Elodie RIOU Github" width="15px" src=./pictures/logo_github.png>
