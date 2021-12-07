@@ -334,7 +334,7 @@ To know more about groff, go to the `man groff`.
 
 ## Challenge of this team project
 
-__First step:__ the goal was to understand the main concepts
+__First step: the goal was to understand the main concepts.__
 * PID & PPID: process ID and parent process ID. There are used by many functions and system calls to interact with and manipulate process.
 * getline: function that reads an entire line, storing the address of the buffer containing the textwrite in stdin.
 * strtok: function that breaks a string into token thinks that a delimitor.
@@ -344,7 +344,7 @@ __First step:__ the goal was to understand the main concepts
 * stat:system call gets the status of a file (exist or not).
 * getenv: function that get an environment variable.
 
-__Second step:__ the goal was to link all of these concepts
+__Second step: the goal was to link all of these concepts.__
 * make a program that execute the command `ls -l /tmp` in 5 differents child processes
 * write a first version of a super simple shell that can run commands simple
 * clone the repo to get the code of the concepts:
@@ -352,10 +352,10 @@ __Second step:__ the goal was to link all of these concepts
 git clone https://github.com/elodieriou/super_simple_shell.git
 ```
 
-__Third step:__ create and link git & github
-This part was delicate. We decided to create only 2 branches : master and main. Master for the working directory and main for the checker.
+__Third step: create and link git & github.__
+* This part was delicate. We decided to create only 2 branches : master and main. Master for the working directory and main for the checker.
 
-__Fourth step:__ it was time to coding the Simple shell
+__Fourth step: it was time to coding the Simple shell.__
 * implementation all of the global function that we needed
 * write a function that create an array of string (tokenization)
 * write a function that find the command in the $PATH
@@ -364,15 +364,15 @@ __Fourth step:__ it was time to coding the Simple shell
 * write a function that handle ctrl+c which not quit the program
 * write the main function that execute the simple shell
 
-__Fifth step:__ a litle bit of writing
+__Fifth step: a litle bit of writing.__
 * write a man page for Simple Shell
 * write a complet README
 
-__Sixth step:__ check betty warnings
-We must satisfy Betty. It was a simple part. We know her now ;)
+__Sixth step: check betty warnings.__
+* We must satisfy Betty. It was a simple part. We know her now ;)
 
-__General impression__
-The most difficult to manage in this project was the memory leaks. We had to release the memory in the right place. This was the last project of the C language. Now, we're ready to learn Python!
+__GENERAL IMPRESSION:__
+*__The most difficult to manage in this project was the memory leaks. We had to release the memory in the right place. This was the last project of the C language. Now, we're ready to learn Python!__
 
 
 ## Authors
