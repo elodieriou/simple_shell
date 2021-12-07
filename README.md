@@ -141,85 +141,79 @@ HSH is a Simple Shell. It's program that takes commands inputs written from the 
 
 ## Functions
 
-### Manage strings of character
+### Strings tools
 
-[_putchar.c](../simple_shell/_putchar.c)
+[_putchar.c](https://github.com/elodieriou/simple_shell/blob/main/strings_tool.c)
 ```
 /* _putchar - function that write a character to stdout */
 int _putchar(char c);
 ```
 
-[_putstr.c](../simple_shell/_putstr.c)
+[_putstr.c](https://github.com/elodieriou/simple_shell/blob/main/strings_tool.c)
 ```
 /* _putstr - function that print a string
 int _putstr(char *s);
 ```
 
-[_strcmp.c](../simple_shell/_strcmp.c)
+[_strcmp.c](https://github.com/elodieriou/simple_shell/blob/main/strings_tool.c)
 ```
 /* _strcmp - function that compares two strings */
 int _strcmp(char *s1, char *s2);
 ```
 
-[_strlen.c](../simple_shell/_strlen.c)
+[_strlen.c](https://github.com/elodieriou/simple_shell/blob/main/strings_tool_2.c)
 ```
 /* _strlen - function that calculate the lenght of a string */
 int _strlen(char *s);
 ```
 
-[_strdup.c](../simple_shell/_strdup.c)
+[_strdup.c](https://github.com/elodieriou/simple_shell/blob/main/strings_tool_2.c)
 ```
 /* _strdup - function that duplicate a string */
 char *_strdup(char *str);
 ```
 
-[_strcat.c](../simple_shell/_strcat.c)
+[_strcat.c](https://github.com/elodieriou/simple_shell/blob/main/strings_tool.c)
 ```
 /* _strcat - function that concatenate two strings */
 char *_strcat(char *dest, char *src);
 ```
 
-[_strcpy.c](../simple_shell/_strcpy.c)
+[_strcpy.c](https://github.com/elodieriou/simple_shell/blob/main/strings_tool.c)
 ```
 /* _strcpy - function that copy a string */
 char *_strcpy(char *dest, char *src);
 ```
 
-### Manage memory
+### Memory tools
 
-[_memcpy.c](../simple_shell/_memcpy.c)
+[_memcpy.c](https://github.com/elodieriou/simple_shell/blob/main/memory_tools.c)
 ```
 /* _memcpy - function that copy memory area */
 char *_memcpy(char *dest, char *src, unsigned int n);
 ```
 
-[_realloc.c](../simple_shell/_realloc.c)
+[_realloc.c](https://github.com/elodieriou/simple_shell/blob/main/memory_tools.c)
 ```
 /* _realloc - function that changes the size of the memory */
 void *_realloc(void *ptr, unisgned in old_size, unsigned int new_size);
 ```
 
-[_memset.c](../simple_shell/_memset.c)
+[_memset.c](https://github.com/elodieriou/simple_shell/blob/main/memory_tools.c)
 ```
 /* _memset - function that fill memory with a constant byte */
 char *_memset(char *s, char b, unsigned int n);
 ```
 
-[_calloc.c](../simple_shell/_calloc.c)
-```
-/* _calloc - function that allocates memory for an array of n elements */
-void *_calloc(unsigned int nmemb, unsigned int size);
-```
-
 ### Get environment and PATH
 
-[_getenv.c](../simple_shell/_getenv.c)
+[_getenv.c](https://github.com/elodieriou/simple_shell/blob/main/get_path.c)
 ```
 /* _getenv - function that get an environement variable */
 char *_getenv(const char *name);
 ```
 
-[get_path.c](../simple_shell/get_path.c)
+[get_path.c](https://github.com/elodieriou/simple_shell/blob/main/get_path.c)
 ```
 /* get_path - function that get the path to the command file
 void get_path(char **av);
@@ -227,13 +221,13 @@ void get_path(char **av);
 
 ### Split and execute
 
-[split.c](../simple_shell/split.c)
+[split.c](https://github.com/elodieriou/simple_shell/blob/main/split.c)
 ```
 /* split - function that parse a string */
 char **split(char *line, char *delim);
 ```
 
-[exe.c](../simple_shell/exe.c)
+[exe.c](https://github.com/elodieriou/simple_shell/blob/main/exe.c)
 ```
 /* exe - function that execute a command */
 int exe(char **av);
@@ -241,23 +235,39 @@ int exe(char **av);
 
 ### Builtins
 
-[builtin_exit.c](../simple_shell/builtin_exit.c)
+[builtin_exit.c](https://github.com/elodieriou/simple_shell/blob/main/builtin_exit.c)
 ```
 /* builtin_exit - function that exit the program simple_shell */
 int builtin_exit(void);
 ```
 
-[builtin_env.c](../simple_shell/builtin_env.c)
+[builtin_env.c](https://github.com/elodieriou/simple_shell/blob/main/builtin_env.c)
 ```
 /* builtin_env - function that print an environment variable */
 int builtin_env(void);
 ```
 
-[exe_buildins.c](../simple_shell/exe_builtins.c)
+[builtin_help.c](https://github.com/elodieriou/simple_shell/blob/main/builtin_help.c)
+```
+/* builtin_help - function that help the user */
+int builtin_help(char **av);
+```
+
+[check_builtin.c](https://github.com/elodieriou/simple_shell/blob/main/check_builtin.c)
+```
+/* check_builtin - function that check if the command is a builtin */
+int check_builtin(char **av);
+```
+
+[exe_buildins.c](https://github.com/elodieriou/simple_shell/blob/main/exe_builtins.c)
 ```
 /* exe_builtins - function that execute the builtins */
 int exe_builtins(char **av);
 ```
+
+### Handle ctrl+C
+
+[get_signal.c](https://github.com/elodieriou/simple_shell/blob/main/get_signal.c)
 
 ### Structure
 
@@ -312,6 +322,7 @@ We alwready used the text-formatting language `Groff`:
 In order to format a man page and view it on the terminal, use the command: `man ./man_1_simple_shell`.
 
 To know more about groff, go to the `man groff`.
+
 
 ## Authors
 
