@@ -8,19 +8,37 @@ simple_shell \- command interpreter
 
 \fB simple_shell [option_name] [argument ...]
 .SH DESCRITION
-The Simple_shell is a command that reads lines from the terminal, interpreter and executes them in a standard output.
+The Simple Shell is a command that reads lines from the terminal, interpreter and executes them in a standard output.
 
 .SH INVOCATION
-If the command [ls -l] is passed in the Simple_shell connected to a terminal, the Simple_shell is considered an interactive shell.
+If the standart input is [ls -l] to connect the command at the terminal, Simple Shell is considered an interactive shell.
 
-If the command [echo "ls -l" | ./hsh] in the real shell, the Simple_shell is considered an non-interective shell.
+If the standart input is with a pipeline operator "|" to connect the command at the terminal, such as [echo "ls -l" | ./hsh], Simple Shell is considered an non-interactive mode.
 
 .SH LEXICAL STRUCTURE
 The Simple Shell reads input in terms of line from a file and breaks it up into words at whitespace (blanks and tabs).
 
+.SH EXAMPLE STANDARD INPUT
+.TS
+allbox tab(|);
+c s c
+c s c
+c s c
+c s c
+c s c.
+ls | display list directory contents
+ls -l | display ls with a long format
+pwd | print name of current working directory
+cp | copy files and directories
+mv | move or rename file/directory
+.TE
+
 .SH RETURN VALUE
 If successful return, the simple_shell return a 0.
 If an error appened (command incorrectly or doesn't exist in the $PATH), the simple_shell exit out of the child process, display an error message and return with a new prompt. At the end, a new child process began.
+
+.SH EXIT STATUS
+If the Simple Shell is not an interactive shell, the execution of the shell file will be aborted. Otherwise, the Simple Shell will exit whith the [CTRL + D] command or with the exit builtin.
 
 .SH BUILTINS
 .TS
@@ -35,12 +53,11 @@ exit | simple_shell exits out of the simple_shell program
 
 .SH SEE ALSO
 
-\fBBefore coding, create a super_simple_shell\fP
+\fBBefore coding a Simple Shell, create a Super Simple Shell !\fP
 
 .PP
 Page concept: https://intranet.hbtn.io/concepts/64
 
-.pp
 Source code: https://github.com/elodieriou/super_simple_shell
 
 .SH AUTHORS
