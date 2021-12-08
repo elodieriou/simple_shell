@@ -9,20 +9,20 @@ int main(void)
 {
 	char *line = NULL, **av, *tmp;
 	size_t buf = 0;
-	int n, mode = 1;
+	int n;
 
 	signal(SIGINT, get_signal);
 
-	while (mode)
+	while (1)
 	{
-		mode = isatty(STDIN_FILENO);
-		if (mode == 1)
-			_putstr("#cisfun$ ");
+		if ((isatty(STDIN_FILENO) == 1) && (isatty(STDOUT_FILENO) == 1))
+			write(STDOUT_FILENO, "#cisfun$ ", 9);
 		n = getline(&line, &buf, stdin);
 		if (n == -1)
 		{
-			_putchar('\n');
 			free(line);
+			if (isatty(STDIN_FILENO) != 0)
+				write(STDOUT_FILENO, "\n", 1);
 			exit(EXIT_FAILURE);
 		}
 		av = split(line, "' '':''\n''\t'");
