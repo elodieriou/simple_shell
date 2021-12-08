@@ -14,12 +14,14 @@ char **split(char *line, char *delim)
 
 	av = malloc(sizeof(char *));
 	if (av == NULL)
+	{
+		free(av);
 		exit(EXIT_FAILURE);
+	}
 	token = strtok(line, delim);
 	for (i = 0; token != NULL; i++)
 	{
-		av[i] = _realloc(av[i], 0,
-			       (_strlen(token) + 1) * sizeof(char));
+		av = _realloc(av, sizeof(av), (i + 1) * sizeof(char *));
 		av[i] = token;
 		token = strtok(NULL, delim);
 	}

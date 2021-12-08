@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	char *line = NULL, **av;
+	char *line = NULL, **av, *tmp;
 	size_t buf = 0;
 	int n, mode = 1;
 
@@ -31,11 +31,14 @@ int main(void)
 			free(av);
 			continue;
 		}
+		tmp = av[0];
 		if (check_builtin(av) == -1)
 		{
 			get_path(av);
 			if (av[0] != NULL)
 				exe(av);
+			if (tmp != av[0])
+				free(av[0]);
 		}
 		else
 			exe_builtins(av);

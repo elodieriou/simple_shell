@@ -19,7 +19,7 @@ void get_path(char **av)
 	{
 		/* concatenate (ex ls -> /bin/ls))*/
 		bin = _realloc(bin, sizeof(bin),
-		       ((_strlen(token) + _strlen(av[0]) + 2) * sizeof(char)));
+		  (_strlen(av[0]) + _strlen(token)) * sizeof(char));
 		if (bin == NULL)
 		{
 			free(bin);
