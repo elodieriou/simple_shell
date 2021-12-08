@@ -10,5 +10,5 @@ int builtin_exit(char **av)
 {
 	(void)av;
 
-	exit(EXIT_FAILURE);
+	exit(0);
 }
