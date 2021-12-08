@@ -12,7 +12,7 @@ void get_path(char **av)
 	struct stat st;
 	int i;
 
-	path = _strdup(_getenv("PATH"));
+	path = _strdup(_getenv());
 	token = strtok(path, ":");
 
 	for (i = 0; token != NULL; i++)
@@ -36,39 +36,34 @@ void get_path(char **av)
 			return;
 		}
 		token = strtok(NULL, ":");
+		free(bin);
 		bin = NULL;
 	}
 }
 
-
 /**
  * _getenv - gets an environment variable. (without using getenv)
- * @name: name of the value (var)
  * Return: string or 0 if failed
  */
 
-char *_getenv(const char *name)
+char *_getenv(void)
 {
-	char *token, **tmp;
-	int i;
+	int x;
+	char **env = environ, *path = NULL;
 
-	tmp = malloc(sizeof(char *));
-	for (i = 0; environ[i] != NULL; i++)
+	while (*env)
 	{
-		tmp[i] = _realloc(tmp, sizeof(tmp),
-				  (_strlen(environ[i]) * sizeof(char) + 1));
-		tmp[i] = _strdup(environ[i]);
-	}
-	for (i = 0; tmp[i] != NULL; i++)
-	{
-		token = strtok(tmp[i], "=");
-		if (_strcmp(token, name) == 0)
+		if (_strncmp(*env, "PATH=", 5) == 0)
 		{
-			token = strtok(NULL, "=");
-			free(tmp);
-			return (token);
+			path = *env;
+			while (*path && x < 5)
+			{
+				path++;
+				x++;
+			}
+			return (path);
 		}
+		env++;
 	}
-	free(tmp);
-	return (0);
+	return (NULL);
 }

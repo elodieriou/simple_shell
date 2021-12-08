@@ -29,6 +29,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (nptr == 0)
 		return (NULL);
 	_memcpy(nptr, ptr, old_size);
+	free(ptr);
 	return (nptr);
 }
 
@@ -45,7 +46,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 	unsigned int i;
 
 	for (i = 0; i < n; i++)
-		dest[i] = ((char *)src)[i];
+		dest[i] = *src++;
 	return (dest);
 }
 

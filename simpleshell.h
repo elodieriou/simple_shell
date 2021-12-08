@@ -27,6 +27,7 @@ extern char **environ;
 int _putchar(char c);
 int _putstr(char *s);
 int _strcmp(char *s1, const char *s2);
+int _strncmp(char *s1, char *s2, int n);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 void print_number(unsigned int n);
@@ -37,7 +38,7 @@ char *_strdup(char *str);
 char **split(char *line, char *delim);
 int exe(char **av);
 void get_path(char **av);
-char *_getenv(const char *name);
+char *_getenv(void);
 
 /* Memory management */
 char *_memcpy(char *dest, char *src, unsigned int n);
