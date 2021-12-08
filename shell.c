@@ -44,5 +44,5 @@ int main(void)
 			exe_builtins(av);
 		free(av);
 	}
-	exit(EXIT_SUCCESS);
+	exit(0);
 }
