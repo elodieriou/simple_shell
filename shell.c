@@ -23,7 +23,7 @@ int main(void)
 			free(line);
 			if (isatty(STDIN_FILENO) != 0)
 				write(STDOUT_FILENO, "\n", 1);
-			exit(EXIT_FAILURE);
+			exit(0);
 		}
 		av = split(line, "' '':''\n''\t'");
 		if (av[0] == NULL)

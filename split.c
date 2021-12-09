@@ -16,7 +16,7 @@ char **split(char *line, char *delim)
 	if (av == NULL)
 	{
 		free(av);
-		exit(EXIT_FAILURE);
+		exit(2);
 	}
 	token = strtok(line, delim);
 	for (i = 0; token != NULL; i++)
