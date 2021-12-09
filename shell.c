@@ -1,7 +1,7 @@
 #include "simpleshell.h"
 
 /**
- * main - program that execute a super simple shell
+ * main - program that execute a simple shell
  * Return: 0 if success, -1 if failed
  */
 
