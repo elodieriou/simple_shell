@@ -25,7 +25,7 @@ int exe(char **av)
 		if (exe == -1)
 		{
 			perror(av[0]);
-			exit(2);
+			exit(0);
 		}
 	}
 	return (0);
