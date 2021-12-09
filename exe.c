@@ -28,5 +28,5 @@ int exe(char **av)
 			exit(2);
 		}
 	}
-	return (1);
+	return (0);
 }
