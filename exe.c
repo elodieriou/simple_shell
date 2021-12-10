@@ -21,7 +21,7 @@ int exe(char **av)
 	}
 	else
 	{
-		exe = execve(av[0], av, NULL);
+		exe = execve(av[0], av, environ);
 		if (exe == -1)
 		{
 			perror(av[0]);
